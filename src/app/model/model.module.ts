@@ -6,11 +6,12 @@ import { CategoryRepository } from './category.repository';
 import { CartItem, Cart } from './cart.model';
 import { Order } from './order.model';
 import { OrderRepository } from './order.repository';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
   imports: [HttpClientModule],
-  providers: [RestService, ProductRepository, CategoryRepository, OrderRepository, CartItem, Cart, Order]
+  providers: [RestService, ProductRepository, CategoryRepository, OrderRepository, CartItem, Cart, Order, AuthService]
 })
 export class ModelModule {
 

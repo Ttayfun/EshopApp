@@ -1,0 +1,38 @@
+<div class="row border m-o p-3 mb-4 " *ngIf="selectedProduct" >
+  <div class="col-md-2">
+      <img src="/src/assets/img/{{selectedProduct.imageUrl}}">
+  </div>
+  <div class="col-md-10">
+    <h5 class="card-title" >
+        {{selectedProduct.name}}
+    </h5>
+    <p class="card-text">
+        {{selectedProduct.description}}
+    </p>
+  <button (click)="hideDetails()" class="btn btn-danger btn-sm">Seçimi İptal Et</button>
+  <button  (click)="addProductCart(selectedProduct)" class="btn btn-outline-primary btn-sm ml-3" >Add To Cart</button>
+  </div>
+</div>
+<div class="row" >
+    <div class="col-md-4" *ngFor="let p of products">
+      <div class="card mb-3">
+        <img src="/src/assets/telPhoto.png" alt="{{p.name}}">
+        <div class="card-body">
+          <h4 class="cart-title">
+            <a href="">
+              {{p.name}}
+            </a>
+          </h4>
+          <small class="text-muted">
+            <i class="fas fa-lira-sign">
+              {{p.price}}
+            </i>
+          </small>
+        </div>
+        <div class="card-footer text-center">
+          <button (click)="displayDetails(p)" class="btn btn-outline-primary btn-sm">Details</button>
+          <button (click)="addProductCart(p)" class="btn btn-outline-primary btn-sm ml-3">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>

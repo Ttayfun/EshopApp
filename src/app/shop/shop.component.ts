@@ -19,10 +19,7 @@ export class ShopComponent implements OnInit {
 
 
 
-  constructor(private productRepository: ProductRepository,
-              private categoryRepository: CategoryRepository,
-              private cart: Cart,
-              private router: Router) { }
+  constructor(private productRepository: ProductRepository) { }
 
 
   get products(): Product[] {
@@ -43,19 +40,7 @@ export class ShopComponent implements OnInit {
     this.selectedPage = p;
   }
 
-  get categories(): Category[] {
-    return this.categoryRepository.getCategories();
-  }
   ngOnInit() {
-  }
-
-  changeCategory(selected?: Category) {
-    this.selectedCategory = selected;
-  }
-
-  addProductCart(product: Product) {
-    this.cart.addItem(product);
-    this.router.navigateByUrl('/cart');
   }
 
 }

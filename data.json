@@ -107,6 +107,31 @@
       "phone": "123",
       "mail": "Deneme1@mail.com",
       "id": 1
+    },
+    {
+      "cart": {
+        "itemCount": 1,
+        "items": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Samsung S5",
+              "price": 1000,
+              "imageUrl": "1.jpg",
+              "description": "idare eder",
+              "category": "Telefon"
+            },
+            "quantity": 1
+          }
+        ],
+        "total": 1000
+      },
+      "name": "Denemlerim",
+      "address": "Denemlerim",
+      "city": "Denemlerim",
+      "phone": "1234555",
+      "mail": "Denemlerim@gmail.com",
+      "id": 2
     }
   ]
 }
