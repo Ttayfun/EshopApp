@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { RestService } from './rest.service';
-import { Product } from './product.model';
-import { Category } from './category.model';
+import {Injectable} from '@angular/core';
+import {RestService} from './rest.service';
+import {Product} from './product.model';
+import {Category} from './category.model';
 
 @Injectable()
 export class ProductRepository {
@@ -13,14 +13,15 @@ export class ProductRepository {
   }
 
   getProduct(id: number): Product {
-   return this.product.find( pr => pr.id === id);
+    return this.product.find(pr => pr.id === id);
   }
 
-  getProducts( category: Category): Product[] {
-   if (category) {
-    return this.product.filter( p => p.category == category.name )
-  } else {
-    return this.product;
-  }}
+  getProducts(category: Category): Product[] {
+    if (category) {
+      return this.product.filter(p => p.category == category.name);
+    } else {
+      return this.product;
+    }
+  }
 
 }
