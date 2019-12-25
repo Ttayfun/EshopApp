@@ -1,5 +1,5 @@
-import { Cart } from './cart.model';
-import { Injectable } from '@angular/core';
+import {Cart} from './cart.model';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class Order {
@@ -12,7 +12,8 @@ export class Order {
 
   public isSent: false;
 
-  constructor( public cart: Cart ) { }
+  constructor(public cart: Cart) {
+  }
 
 
   clearOrder() {

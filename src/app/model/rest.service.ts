@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, VirtualTimeScheduler } from 'rxjs';
-import { Product } from './product.model';
-import { Category } from './category.model';
-import { Order } from './order.model';
-import { map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, VirtualTimeScheduler} from 'rxjs';
+import {Product} from './product.model';
+import {Category} from './category.model';
+import {Order} from './order.model';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class RestService {
@@ -12,7 +12,8 @@ export class RestService {
   baseUrl = 'http://localhost:3500/';
   token: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl + 'products');
@@ -31,10 +32,10 @@ export class RestService {
       username: username,
       password: password
     }).pipe(map(response => {
-      this.token = response.succes ? response.token: null;
+      this.token = response.succes ? response.token : null;
       console.log(this.token);
       return response.succes;
-    }))
+    }));
   }
 
 }

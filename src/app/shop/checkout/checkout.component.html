@@ -4,38 +4,38 @@
   <div *ngIf="orderSent" class="m-2  text-center">
     <h2>Teşekkürler</h2>
     <p>Siparişiniz Kayıt Edildi</p>
-    <button class="btn btn-primary" routerLink="/shop">Alışverişe Devam Et </button>
+    <button class="btn btn-primary" routerLink="/shop">Alışverişe Devam Et</button>
   </div>
 
   <form *ngIf="!orderSent" #form="ngForm" (ngSubmit)="submitOrder(form)" class="m-4">
     <div class="form-group">
       <label>Name</label>
       <input class="form-control" #name="ngModel" type="text" name="name" [(ngModel)]="order.name" required>
-      <span *ngIf="submitted && name.invalid"  class="text-danger" >Eksik Bilgi</span>
+      <span *ngIf="submitted && name.invalid" class="text-danger">Eksik Bilgi</span>
     </div>
 
     <div class="form-group">
       <label>Adres</label>
-      <input class="form-control" #address="ngModel" type="text"  name="address" [(ngModel)]="order.address" required>
-      <span *ngIf="submitted && address.invalid"  class="text-danger" >Eksik Bilgi</span>
+      <input class="form-control" #address="ngModel" type="text" name="address" [(ngModel)]="order.address" required>
+      <span *ngIf="submitted && address.invalid" class="text-danger">Eksik Bilgi</span>
     </div>
 
     <div class="form-group">
       <label>Şehir</label>
       <input class="form-control" #city="ngModel" type="text" name="city" [(ngModel)]="order.city" required>
-      <span *ngIf="submitted && city.invalid"  class="text-danger" >Eksik Bilgi</span>
+      <span *ngIf="submitted && city.invalid" class="text-danger">Eksik Bilgi</span>
     </div>
 
     <div class="form-group">
       <label>Telefon</label>
-      <input class="form-control" #phone="ngModel" type="text" name="phone"  [(ngModel)]="order.phone" required>
-      <span *ngIf="submitted && phone.invalid"  class="text-danger" >Eksik Bilgi</span>
+      <input class="form-control" #phone="ngModel" type="text" name="phone" [(ngModel)]="order.phone" required>
+      <span *ngIf="submitted && phone.invalid" class="text-danger">Eksik Bilgi</span>
     </div>
 
     <div class="form-group">
       <label>Mail</label>
-      <input class="form-control" #mail="ngModel" type="text" name="mail"  [(ngModel)]="order.mail" required>
-      <span *ngIf="submitted && mail.invalid"  class="text-danger" >Eksik Bilgi</span>
+      <input class="form-control" #mail="ngModel" type="text" name="mail" [(ngModel)]="order.mail" required>
+      <span *ngIf="submitted && mail.invalid" class="text-danger">Eksik Bilgi</span>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Siparişi Tamamla</button>

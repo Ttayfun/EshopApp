@@ -1,19 +1,20 @@
-import { Component } from "@angular/core";
-import { AuthService } from '../model/auth.service';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {AuthService} from '../model/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
-    templateUrl:'admin.component.html'
+  templateUrl: 'admin.component.html'
 })
-export class AdminComponent{
-    
-    constructor(
-        private authService:AuthService,
-        private router: Router
-        ){ }
+export class AdminComponent {
 
-    logout(){
-        this.authService.clear();
-        this.router.navigateByUrl("/shop");
-    }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+  }
+
+  logout() {
+    this.authService.clear();
+    this.router.navigateByUrl('/shop');
+  }
 }

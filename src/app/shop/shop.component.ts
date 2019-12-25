@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductRepository } from '../model/product.repository';
-import { CategoryRepository } from '../model/category.repository';
-import { Product } from '../model/product.model';
-import { Category } from '../model/category.model';
-import { Cart } from '../model/cart.model';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ProductRepository} from '../model/product.repository';
+import {CategoryRepository} from '../model/category.repository';
+import {Product} from '../model/product.model';
+import {Category} from '../model/category.model';
+import {Cart} from '../model/cart.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'shop',
@@ -18,25 +18,25 @@ export class ShopComponent implements OnInit {
   public selectedPage = 1;  // hangi sayfa aktif olsun
 
 
-
-  constructor(private productRepository: ProductRepository) { }
+  constructor(private productRepository: ProductRepository) {
+  }
 
 
   get products(): Product[] {
     const index = (this.selectedPage - 1) * this.productsPerPage;
     return this.productRepository
-                      .getProducts(this.selectedCategory)
-                      .slice(index, index + this.productsPerPage);
+      .getProducts(this.selectedCategory)
+      .slice(index, index + this.productsPerPage);
   }
 
-  get pageNumbers(): number[]{
+  get pageNumbers(): number[] {
     return Array(Math.ceil(this.productRepository
-                  .getProducts(this.selectedCategory).length / this.productsPerPage))
-                  .fill(0) // diziye 0 değerini atıyoruz
-                  .map((a, i ) => i + 1 )
+      .getProducts(this.selectedCategory).length / this.productsPerPage))
+      .fill(0) // diziye 0 değerini atıyoruz
+      .map((a, i) => i + 1);
   }
 
-  changePage(p: number){
+  changePage(p: number) {
     this.selectedPage = p;
   }
 
