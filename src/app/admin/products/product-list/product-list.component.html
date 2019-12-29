@@ -1,1 +1,24 @@
-<p>product-list works!</p>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of getAllProduct()">
+    <td>
+      <img src="" width="50">
+    </td>
+    <td>{{p.name}}</td>
+    <td>{{p.price}} TL</td>
+    <td>
+      <button class="btn btn-warning btn-sm" (click)="onEdit(p.id)" >Edit</button>
+      <!--<button class="btn btn-danger btn-sm ml-1" (click)="deleteProduct(p)" >Delete</button>-->
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn btn-success" (click)="onAdd()" >Ürün Ekle</button>

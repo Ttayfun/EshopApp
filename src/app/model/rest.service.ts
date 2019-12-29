@@ -27,6 +27,18 @@ export class RestService {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
 
+  deleteProduct(product: Product): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + 'products/' + product.id);
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl + 'products/' , product.id);
+  }
+
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl + 'products', product);
+  }
+
   authentication(username: string, password: string): Observable<boolean> {
     return this.http.post<any>(this.baseUrl + 'login', {
       username: username,
