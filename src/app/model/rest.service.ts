@@ -1,16 +1,22 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable, VirtualTimeScheduler} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError, VirtualTimeScheduler} from 'rxjs';
 import {Product} from './product.model';
 import {Category} from './category.model';
 import {Order} from './order.model';
-import {map} from 'rxjs/operators';
+import {catchError, map, retry} from 'rxjs/operators';
 
 @Injectable()
 export class RestService {
 
   baseUrl = 'http://localhost:3500/';
   token: string;
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) {
   }
@@ -32,7 +38,7 @@ export class RestService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl + 'products/' , product.id);
+    return this.http.put<Product>(this.baseUrl + 'products/' + product.id, JSON.stringify(product) , this.httpOptions);
   }
 
   addProduct(product: Product): Observable<Product> {
@@ -49,5 +55,4 @@ export class RestService {
       return response.succes;
     }));
   }
-
 }
