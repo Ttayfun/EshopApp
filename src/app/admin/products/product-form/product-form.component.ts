@@ -12,7 +12,7 @@ import {Form} from '@angular/forms';
 export class ProductFormComponent implements OnInit {
 
   editProduct = false;
-  product: Product = new Product();
+  product: Product = {};
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -28,7 +28,6 @@ export class ProductFormComponent implements OnInit {
   }
 
   save(form: Form) {
-    console.log(this.product);
     this.repository.saveProduct(this.product);
     this.router.navigateByUrl('admin/main/products');
   }
