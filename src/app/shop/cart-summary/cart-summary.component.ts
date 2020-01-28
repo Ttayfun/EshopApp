@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Cart} from 'src/app/model/cart.model';
 
 @Component({
@@ -6,12 +6,8 @@ import {Cart} from 'src/app/model/cart.model';
   templateUrl: './cart-summary.component.html',
   styleUrls: ['./cart-summary.component.css']
 })
-export class CartSummaryComponent implements OnInit {
+export class CartSummaryComponent {
 
   constructor(public cart: Cart) {
   }
-
-  ngOnInit() {
-  }
-
 }
